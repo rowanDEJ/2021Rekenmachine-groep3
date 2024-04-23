@@ -3,11 +3,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class JavaFXAppTest {
     @Test
-    void aDummyTest() {
-        assertEquals(0,0);
-    }
-
-    @Test
     void testComputeDivide(){
         IComputation comp = new DivideComputation();
         assertEquals(2, comp.compute(4, 2));
