@@ -29,36 +29,28 @@ public class JavaFXApp extends Application {
         return Integer.parseInt (textField.getText ());
     }
 
-    protected int computeAdd (int number1, int number2) {
-        return number1 + number2;
-    }
-
-    protected int computeMultiply (int number1, int number2) {
-        return number1 * number2;
-    }
-
-    protected int computeDivide (int number1, int number2) {
-        return number1 / number2;
-    }
-
     private void compute (String operator) {
 
-        int result;
+        int result = 0;
         int number1 = getNumberFromTextField (txtNumber1);
         int number2 = getNumberFromTextField (txtNumber2);
 
+        IComputation computation = null;
+
         switch (operator) {
             case PLUS:
-                result = computeAdd (number1, number2);
+                computation = new PlusComputation();
                 break;
             case MULTIPLY:
-                result = computeMultiply (number1, number2);
+                computation = new MultiplyComputation();
                 break;
             case DIVIDE:
-                result = computeDivide (number1, number2);
+                computation = new DivideComputation();
                 break;
-            default:
-                result = 0;
+        }
+
+        if (computation != null) {
+            result = computation.compute(number1, number2);
         }
 
         txtResult.setText (String.valueOf (result));

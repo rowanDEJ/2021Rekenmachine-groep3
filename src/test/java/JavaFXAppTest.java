@@ -15,7 +15,7 @@ class JavaFXAppTest {
         assertEquals(3, app.computeDivide(9, 3)); 
     }
     @Test
-    void AddTest() {
+    void testComputeAdd() {
         JavaFXApp app = new JavaFXApp();
         assertEquals(0, app.computeAdd(0, 0));
         assertEquals(1, app.computeAdd(4, -3));
