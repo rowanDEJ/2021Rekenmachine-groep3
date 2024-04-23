@@ -8,7 +8,7 @@ class JavaFXAppTest {
     }
 
     @Test
-    void testComputeDivide()
+    void testComputeDivide(){
         JavaFXApp app = new JavaFXApp();
         assertEquals(2, app.computeDivide(4, 2));
         assertEquals(4, app.computeDivide(8, 2));
