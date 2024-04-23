@@ -8,6 +8,13 @@ class JavaFXAppTest {
     }
 
     @Test
+    void AddTest() {
+        JavaFXApp app = new JavaFXApp();
+        assertEquals(0, app.computeAdd(0, 0));
+        assertEquals(1, app.computeAdd(4, -3));
+        assertEquals(-8, app.computeAdd(-5, -3));
+    }
+    @Test
     void testComputeMultiply() {
         JavaFXApp app = new JavaFXApp();
         assertEquals(0, app.computeMultiply(0, 0));
